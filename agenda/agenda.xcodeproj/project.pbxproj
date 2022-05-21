@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		417CDECB28386C8C006F7E75 /* agendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417CDECA28386C8C006F7E75 /* agendaTableViewCell.swift */; };
+		417CDECB28386C8C006F7E75 /* AgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417CDECA28386C8C006F7E75 /* AgendaTableViewCell.swift */; };
 		BA16F2C92838683F00F425D2 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA16F2C82838683F00F425D2 /* PersonCell.swift */; };
 		E15C3B4A2838452A005B3699 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15C3B492838452A005B3699 /* AppDelegate.swift */; };
 		E15C3B4C2838452A005B3699 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15C3B4B2838452A005B3699 /* SceneDelegate.swift */; };
@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		417CDECA28386C8C006F7E75 /* agendaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = agendaTableViewCell.swift; sourceTree = "<group>"; };
+		417CDECA28386C8C006F7E75 /* AgendaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaTableViewCell.swift; sourceTree = "<group>"; };
 		BA16F2C82838683F00F425D2 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		E15C3B462838452A005B3699 /* agenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = agenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15C3B492838452A005B3699 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +41,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC3FAC0F283871FB00B6304F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E15C3B4D2838452A005B3699 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CC3FAC102838720300B6304F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC3FAC122838721800B6304F /* Cell */,
+				E15C3B4F2838452A005B3699 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CC3FAC112838720800B6304F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CC3FAC122838721800B6304F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				417CDECA28386C8C006F7E75 /* AgendaTableViewCell.swift */,
+				BA16F2C82838683F00F425D2 /* PersonCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		E15C3B3D2838452A005B3699 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +93,14 @@
 		E15C3B482838452A005B3699 /* agenda */ = {
 			isa = PBXGroup;
 			children = (
+				CC3FAC112838720800B6304F /* Model */,
+				CC3FAC102838720300B6304F /* View */,
+				CC3FAC0F283871FB00B6304F /* Controller */,
 				E15C3B492838452A005B3699 /* AppDelegate.swift */,
 				E15C3B4B2838452A005B3699 /* SceneDelegate.swift */,
-				E15C3B4D2838452A005B3699 /* ViewController.swift */,
-				E15C3B4F2838452A005B3699 /* Main.storyboard */,
 				E15C3B5228384530005B3699 /* Assets.xcassets */,
 				E15C3B5428384530005B3699 /* LaunchScreen.storyboard */,
 				E15C3B5728384530005B3699 /* Info.plist */,
-				BA16F2C82838683F00F425D2 /* PersonCell.swift */,
-				417CDECA28386C8C006F7E75 /* agendaTableViewCell.swift */,
 			);
 			path = agenda;
 			sourceTree = "<group>";
@@ -144,7 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				417CDECB28386C8C006F7E75 /* agendaTableViewCell.swift in Sources */,
+				417CDECB28386C8C006F7E75 /* AgendaTableViewCell.swift in Sources */,
 				E15C3B4E2838452A005B3699 /* ViewController.swift in Sources */,
 				E15C3B4A2838452A005B3699 /* AppDelegate.swift in Sources */,
 				BA16F2C92838683F00F425D2 /* PersonCell.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class agendaTableViewCell: UITableViewCell {
+class AgendaTableViewCell: UITableViewCell {
 
     @IBOutlet weak var sapecaLabel: UILabel!
     
