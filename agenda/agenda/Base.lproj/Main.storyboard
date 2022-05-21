@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="VPN-z1-AbI">
                                 <rect key="frame" x="16" y="60" width="382" height="34"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qf2-Zd-CqT">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pesquisar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qf2-Zd-CqT">
                                         <rect key="frame" x="0.0" y="0.0" width="270.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -29,27 +29,65 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="87.5" id="ABx-FK-hca"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Pesquisar"/>
+                                        <state key="normal" title="Pesquisar"/>
+                                        <connections>
+                                            <action selector="pesquisar" destination="BYZ-38-t0r" eventType="touchUpInside" id="7u5-ga-Eaa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LvX-V3-lzo">
+                                <rect key="frame" x="0.0" y="110" width="414" height="752"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personCell" rowHeight="57" id="hbO-YB-hhF" customClass="PersonCell" customModule="agenda" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="57"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hbO-YB-hhF" id="wcJ-DX-b7v">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="al1-OK-xjB">
+                                                    <rect key="frame" x="16" y="16" width="382" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="al1-OK-xjB" secondAttribute="trailing" constant="16" id="HX4-mp-ADn"/>
+                                                <constraint firstItem="al1-OK-xjB" firstAttribute="leading" secondItem="wcJ-DX-b7v" secondAttribute="leading" constant="16" id="Tv3-kl-9bz"/>
+                                                <constraint firstAttribute="bottom" secondItem="al1-OK-xjB" secondAttribute="bottom" constant="16" id="WOP-ab-iOj"/>
+                                                <constraint firstItem="al1-OK-xjB" firstAttribute="top" secondItem="wcJ-DX-b7v" secondAttribute="top" constant="16" id="jCY-iV-iJu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="personName" destination="al1-OK-xjB" id="dBC-th-Keu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LvX-V3-lzo" secondAttribute="bottom" id="AVI-SH-iM9"/>
                             <constraint firstItem="VPN-z1-AbI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="bBC-uQ-ASw"/>
                             <constraint firstItem="VPN-z1-AbI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gRZ-Gp-7fE"/>
+                            <constraint firstItem="LvX-V3-lzo" firstAttribute="top" secondItem="VPN-z1-AbI" secondAttribute="bottom" constant="16" id="oAq-RU-bog"/>
+                            <constraint firstItem="LvX-V3-lzo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tLG-RZ-Qqc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LvX-V3-lzo" secondAttribute="trailing" id="tSG-eB-Elb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VPN-z1-AbI" secondAttribute="trailing" constant="16" id="vBe-sQ-GSz"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pesquisaTextField" destination="qf2-Zd-CqT" id="O2H-Hh-K2P"/>
                         <segue destination="K9P-Br-Sw9" kind="show" identifier="detalheSegueIdentifier" id="SWJ-iN-nLx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="110"/>
+            <point key="canvasLocation" x="230.43478260869566" y="109.82142857142857"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zOs-yH-TZf">
