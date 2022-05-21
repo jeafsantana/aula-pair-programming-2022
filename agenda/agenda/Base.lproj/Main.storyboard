@@ -40,7 +40,7 @@
                                 <rect key="frame" x="0.0" y="110" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personCell" rowHeight="57" id="hbO-YB-hhF" customClass="PersonCell" customModule="agenda" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personCell" rowHeight="57" id="hbO-YB-hhF" customClass="agendaTableViewCell" customModule="agenda" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hbO-YB-hhF" id="wcJ-DX-b7v">
@@ -63,6 +63,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="personName" destination="al1-OK-xjB" id="dBC-th-Keu"/>
+                                            <outlet property="sapecaLabel" destination="al1-OK-xjB" id="Zl3-D9-IMs"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

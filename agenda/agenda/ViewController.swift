@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     
     var itensAgenda: [String] = [
-        "Marcelo", "Jorge",
+        "Marcelo", "Jorge", "Clodovil", "Batata", "Adriano", "Jessica"
     ]
 
     @IBOutlet weak var pesquisaTextField: UITextField!
