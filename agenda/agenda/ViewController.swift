@@ -8,6 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    var itensAgenda: [String] = [
+        "Marcelo", "Jorge",
+    ]
 
     @IBOutlet weak var pesquisaTextField: UITextField!
     
@@ -15,7 +20,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func pesquisar() {}
+    @IBAction func pesquisar() {
+        
+    }
 
 }
 
