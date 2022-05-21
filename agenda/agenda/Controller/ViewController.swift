@@ -36,7 +36,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewCellAgenda.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? AgendaTableViewCell
-        
+        cell?.sapecaLabel.text = itensAgenda[indexPath.row]
         return cell ?? UITableViewCell()
     }
     

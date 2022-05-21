@@ -65,8 +65,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="personName" destination="al1-OK-xjB" id="dBC-th-Keu"/>
-                                            <outlet property="sapecaLabel" destination="al1-OK-xjB" id="Zl3-D9-IMs"/>
+                                            <outlet property="sapecaLabel" destination="al1-OK-xjB" id="ZIW-6E-E0O"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
