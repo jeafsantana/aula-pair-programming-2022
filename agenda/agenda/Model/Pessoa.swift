@@ -24,3 +24,4 @@ class Pessoa {
         self.foto = foto
     }
 }
+

@@ -11,7 +11,7 @@ class AgendaTableViewCell: UITableViewCell {
 
     @IBOutlet weak var sapecaLabel: UILabel!
     
-
+    
     
     
 }

@@ -10,10 +10,9 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    var itensAgenda: [String] = [
-        "Marcelo", "Jorge", "Clodovil", "Batata", "Adriano", "Jessica"
-    ]
-
+    let servico = Servico()
+    var itensAgenda: [Pessoa] = []
+    
     @IBOutlet weak var pesquisaTextField: UITextField!
     @IBOutlet weak var tableViewCellAgenda: UITableView!
     
@@ -21,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         tableViewCellAgenda.dataSource = self
-        
+        itensAgenda = servico.itensAgenda
     }
     
     @IBAction func pesquisar() {
@@ -36,7 +35,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewCellAgenda.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? AgendaTableViewCell
-        cell?.sapecaLabel.text = itensAgenda[indexPath.row]
+        cell?.sapecaLabel.text = itensAgenda[indexPath.row].nome
         return cell ?? UITableViewCell()
     }
     

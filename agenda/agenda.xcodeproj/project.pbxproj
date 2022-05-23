@@ -16,6 +16,7 @@
 		E15C3B512838452A005B3699 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E15C3B4F2838452A005B3699 /* Main.storyboard */; };
 		E15C3B5328384530005B3699 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E15C3B5228384530005B3699 /* Assets.xcassets */; };
 		E15C3B5628384530005B3699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E15C3B5428384530005B3699 /* LaunchScreen.storyboard */; };
+		EE34CD5F283C3F100066883D /* Servico.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE34CD5E283C3F100066883D /* Servico.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E15C3B5228384530005B3699 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E15C3B5528384530005B3699 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E15C3B5728384530005B3699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE34CD5E283C3F100066883D /* Servico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servico.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,8 @@
 		CC3FAC112838720800B6304F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				164A43352838760700AB9CC1 /* Pessoa.swift */,
+				EE34CD5E283C3F100066883D /* Servico.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -103,7 +107,6 @@
 				E15C3B5228384530005B3699 /* Assets.xcassets */,
 				E15C3B5428384530005B3699 /* LaunchScreen.storyboard */,
 				E15C3B5728384530005B3699 /* Info.plist */,
-				164A43352838760700AB9CC1 /* Pessoa.swift */,
 			);
 			path = agenda;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				BA16F2C92838683F00F425D2 /* PersonCell.swift in Sources */,
 				164A43362838760700AB9CC1 /* Pessoa.swift in Sources */,
 				E15C3B4C2838452A005B3699 /* SceneDelegate.swift in Sources */,
+				EE34CD5F283C3F100066883D /* Servico.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
