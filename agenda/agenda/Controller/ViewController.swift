@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         tableViewCellAgenda.dataSource = self
+        tableViewCellAgenda.delegate = self
         itensAgenda = servico.itensAgenda
     }
     
@@ -38,5 +39,9 @@ extension ViewController: UITableViewDataSource {
         cell?.sapecaLabel.text = itensAgenda[indexPath.row].nome
         return cell ?? UITableViewCell()
     }
+    
+}
+
+extension ViewController: UITableViewDelegate {
     
 }
