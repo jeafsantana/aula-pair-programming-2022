@@ -33,9 +33,8 @@ class ViewController: UIViewController {
         guard segue.identifier == "detalheSegueIdentifier" else { return }
         guard let segundaVC = segue.destination as? SegundaViewController else { return }
         
-        segundaVC.configVC(pessoa)
-        
-        
+  
+        segundaVC.pessoa = sender as? Pessoa
         
     }
     
@@ -63,8 +62,9 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
-        performSegue(withIdentifier: "detalheSegueIdentifier", sender: nil)
+        let pessoa = itensAgendaFiltrados[indexPath.row]
+       
+        performSegue(withIdentifier: "detalheSegueIdentifier", sender: pessoa)
     }
     
 }

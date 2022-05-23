@@ -22,16 +22,14 @@ class SegundaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    private func configuraDados(pessoa: Pessoa) {
-        nomeLabel.text = pessoa.nome
-        idadeLabel.text = String(pessoa.idade)
-        enderecoLabel.text = pessoa.endereco
-        telefoneLabel.text = pessoa.telefone
-        emailLabel.text = pessoa.email
-        posterImageView.image = UIImage.init(named: pessoa.foto)
+    
+    private func configuraDados() {
+        nomeLabel.text = pessoa?.nome
+        idadeLabel.text = String(pessoa?.idade ?? 0)
+        enderecoLabel.text = pessoa?.endereco
+        telefoneLabel.text = pessoa?.telefone
+        emailLabel.text = pessoa?.email
+        posterImageView.image = UIImage.init(named: pessoa?.foto ?? "")
     }
     
-    func configVC(_ pessoa: Pessoa){
-        self.pessoa = pessoa
-    }
 }
