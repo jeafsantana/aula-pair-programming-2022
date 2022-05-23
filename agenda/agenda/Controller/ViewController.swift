@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var pesquisaTextField: UITextField!
     @IBOutlet weak var tableViewCellAgenda: UITableView!
     
+    var pessoa: Pessoa?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +26,17 @@ class ViewController: UIViewController {
         itensAgenda = servico.itensAgenda
         
         itensAgendaFiltrados = itensAgenda
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard segue.identifier == "detalheSegueIdentifier" else { return }
+        guard let segundaVC = segue.destination as? SegundaViewController else { return }
+        
+        segundaVC.configVC(pessoa)
+        
+        
+        
     }
     
     @IBAction func pesquisar() {
@@ -47,5 +60,11 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        performSegue(withIdentifier: "detalheSegueIdentifier", sender: nil)
+    }
     
 }

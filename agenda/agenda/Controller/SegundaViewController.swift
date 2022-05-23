@@ -16,16 +16,22 @@ class SegundaViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var posterImageView: UIImageView!
     
+    var pessoa: Pessoa?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    func configuraDados(pessoa: Pessoa) {
+    private func configuraDados(pessoa: Pessoa) {
         nomeLabel.text = pessoa.nome
         idadeLabel.text = String(pessoa.idade)
         enderecoLabel.text = pessoa.endereco
         telefoneLabel.text = pessoa.telefone
         emailLabel.text = pessoa.email
         posterImageView.image = UIImage.init(named: pessoa.foto)
+    }
+    
+    func configVC(_ pessoa: Pessoa){
+        self.pessoa = pessoa
     }
 }

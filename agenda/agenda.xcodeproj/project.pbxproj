@@ -51,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				E15C3B4D2838452A005B3699 /* ViewController.swift */,
+				1488D3FC283C4430007897A3 /* SegundaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -109,7 +110,6 @@
 				E15C3B5228384530005B3699 /* Assets.xcassets */,
 				E15C3B5428384530005B3699 /* LaunchScreen.storyboard */,
 				E15C3B5728384530005B3699 /* Info.plist */,
-				1488D3FC283C4430007897A3 /* SegundaViewController.swift */,
 			);
 			path = agenda;
 			sourceTree = "<group>";
