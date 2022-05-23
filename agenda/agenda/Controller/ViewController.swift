@@ -9,9 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     let servico = Servico()
     var itensAgenda: [Pessoa] = []
+    var itensAgendaFiltrados: [Pessoa] = []
     
     @IBOutlet weak var pesquisaTextField: UITextField!
     @IBOutlet weak var tableViewCellAgenda: UITableView!
@@ -25,7 +25,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func pesquisar() {
+        let termoPesquisa = pesquisaTextField.text ?? ""
         
+        for item in itensAgenda {
+            if item.nome.contains(termoPesquisa) {
+                itensAgendaFiltrados.append(item)
+            }
+        }
     }
 }
 
