@@ -18,9 +18,9 @@ class SegundaViewController: UIViewController {
     
     var pessoa: Pessoa?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configuraDados()
     }
     
     private func configuraDados() {

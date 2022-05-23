@@ -23,8 +23,8 @@ class ViewController: UIViewController {
         
         tableViewCellAgenda.dataSource = self
         tableViewCellAgenda.delegate = self
+
         itensAgenda = servico.itensAgenda
-        
         itensAgendaFiltrados = itensAgenda
     }
     
@@ -32,17 +32,33 @@ class ViewController: UIViewController {
         
         guard segue.identifier == "detalheSegueIdentifier" else { return }
         guard let segundaVC = segue.destination as? SegundaViewController else { return }
-        
   
         segundaVC.pessoa = sender as? Pessoa
-        
     }
     
     @IBAction func pesquisar() {
         let termoPesquisa = pesquisaTextField.text ?? ""
-        itensAgendaFiltrados = servico.filtrar(termo: termoPesquisa)
-        tableViewCellAgenda.reloadData()
+        let resultado = servico.filtrar(termo: termoPesquisa)
+        
+        if resultado.count == 0 {
+            pesquisaTextField.layer.borderWidth = 1
+            pesquisaTextField.layer.borderColor = UIColor.red.cgColor
+        } else {
+            pesquisaTextField.layer.borderWidth = 0
+            itensAgendaFiltrados = resultado
+            tableViewCellAgenda.reloadData()
+        }
     }
+    
+    @IBAction func pesquisaChanged() {
+        let termo = pesquisaTextField.text ?? ""
+        
+        if (termo.isEmpty) {
+            itensAgendaFiltrados = itensAgenda
+            tableViewCellAgenda.reloadData()
+        }
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource {
