@@ -20,7 +20,7 @@ class Servico {
     func filtrar(termo: String) -> [Pessoa] {
         var itemsFiltrados: [Pessoa] = []
         for item in itensAgenda {
-            if item.nome.contains(termo) {
+            if item.nome.lowercased().contains(termo.lowercased()) {
                 itemsFiltrados.append(item)
             }
         }

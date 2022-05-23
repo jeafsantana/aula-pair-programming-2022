@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         tableViewCellAgenda.dataSource = self
         tableViewCellAgenda.delegate = self
         itensAgenda = servico.itensAgenda
+        
+        itensAgendaFiltrados = itensAgenda
     }
     
     @IBAction func pesquisar() {
@@ -33,12 +35,12 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itensAgenda.count
+        return itensAgendaFiltrados.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewCellAgenda.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? AgendaTableViewCell
-        cell?.sapecaLabel.text = itensAgenda[indexPath.row].nome
+        cell?.sapecaLabel.text = itensAgendaFiltrados[indexPath.row].nome
         return cell ?? UITableViewCell()
     }
     

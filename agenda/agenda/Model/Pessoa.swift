@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Pessoa {
     let nome: String
