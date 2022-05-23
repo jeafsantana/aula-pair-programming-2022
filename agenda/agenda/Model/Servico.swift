@@ -16,4 +16,14 @@ class Servico {
         Pessoa(nome: "Adriano", idade: 29, endereco: "Rua 6", telefone: "5", email: "adriano@dh.com.br", foto: "Adriano"),
         Pessoa(nome: "Jessica", idade: 30, endereco: "Rua 7", telefone: "6", email: "jessica@dh.com.br", foto: "jessica")
     ]
+    
+    func filtrar(termo: String) -> [Pessoa] {
+        var itemsFiltrados: [Pessoa] = []
+        for item in itensAgenda {
+            if item.nome.contains(termo) {
+                itemsFiltrados.append(item)
+            }
+        }
+        return itemsFiltrados
+    }
 }

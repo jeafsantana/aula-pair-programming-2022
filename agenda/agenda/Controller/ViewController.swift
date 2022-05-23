@@ -26,12 +26,8 @@ class ViewController: UIViewController {
     
     @IBAction func pesquisar() {
         let termoPesquisa = pesquisaTextField.text ?? ""
-        
-        for item in itensAgenda {
-            if item.nome.contains(termoPesquisa) {
-                itensAgendaFiltrados.append(item)
-            }
-        }
+        itensAgendaFiltrados = servico.filtrar(termo: termoPesquisa)
+        tableViewCellAgenda.reloadData()
     }
 }
 
