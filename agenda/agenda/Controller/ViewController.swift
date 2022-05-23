@@ -40,12 +40,17 @@ class ViewController: UIViewController {
         let termoPesquisa = pesquisaTextField.text ?? ""
         let resultado = servico.filtrar(termo: termoPesquisa)
         
-        if resultado.count == 0 {
+        configuraLabel(erro: resultado.count == 0, pessoas: resultado)
+    }
+    
+    private func configuraLabel(erro: Bool, pessoas: [Pessoa]) {
+        if erro {
             pesquisaTextField.layer.borderWidth = 1
             pesquisaTextField.layer.borderColor = UIColor.red.cgColor
-        } else {
+        }
+        else {
             pesquisaTextField.layer.borderWidth = 0
-            itensAgendaFiltrados = resultado
+            itensAgendaFiltrados = pessoas
             tableViewCellAgenda.reloadData()
         }
     }
