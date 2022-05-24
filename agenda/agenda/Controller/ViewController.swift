@@ -8,15 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+        
+    @IBOutlet weak var pesquisaTextField: UITextField!
+    @IBOutlet weak var tableViewCellAgenda: UITableView!
     
     let servico = Servico()
     var itensAgenda: [Pessoa] = []
     var itensAgendaFiltrados: [Pessoa] = []
-    
-    @IBOutlet weak var pesquisaTextField: UITextField!
-    @IBOutlet weak var tableViewCellAgenda: UITableView!
-    
-    var pessoa: Pessoa?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +34,27 @@ class ViewController: UIViewController {
         segundaVC.pessoa = sender as? Pessoa
     }
     
+//MARK: - Eventos
+    
     @IBAction func pesquisar() {
         let termoPesquisa = pesquisaTextField.text ?? ""
         let resultado = servico.filtrar(termo: termoPesquisa)
         
         configuraLabel(erro: resultado.count == 0, pessoas: resultado)
     }
+    
+
+    
+    @IBAction func pesquisaChanged() {
+        let termo = pesquisaTextField.text ?? ""
+        
+        if (termo.isEmpty) {
+            itensAgendaFiltrados = itensAgenda
+            tableViewCellAgenda.reloadData()
+        }
+    }
+    
+//MARK: - Funcoes Privadas
     
     private func configuraLabel(erro: Bool, pessoas: [Pessoa]) {
         if erro {
@@ -55,16 +68,9 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func pesquisaChanged() {
-        let termo = pesquisaTextField.text ?? ""
-        
-        if (termo.isEmpty) {
-            itensAgendaFiltrados = itensAgenda
-            tableViewCellAgenda.reloadData()
-        }
-    }
-    
 }
+
+//MARK: - DataSource
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,6 +84,8 @@ extension ViewController: UITableViewDataSource {
     }
     
 }
+
+//MARK: - Delegate
 
 extension ViewController: UITableViewDelegate {
     
